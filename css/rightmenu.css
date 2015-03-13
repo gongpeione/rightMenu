@@ -1,0 +1,42 @@
+#rightMenu {
+  position: absolute;
+  display: none;
+  padding: 5px 0px;
+  background: #fff;
+  border: 1px solid #bababa;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 999;
+  font-family: 'Open Sans', Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif !important;
+}
+#rightMenu ul {
+  margin: 0;
+  padding: 0;
+}
+#rightMenu ul li {
+  list-style: none;
+}
+#rightMenu ul li a {
+  display: block;
+  padding: 5px 40px;
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+  cursor: default;
+}
+#rightMenu ul li a:hover {
+  background: #4281f4;
+  color: #fff;
+}
+#rightMenu ul li.line {
+  height: 1px;
+  background: #eee;
+  margin: 5px 0px;
+}
+#rightMenu ul li.disabled a {
+  color: #ccc;
+}
+#rightMenu ul li.disabled a:hover {
+  background: transparent;
+  color: #ccc;
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Right Mouse Click Menu</title>
+
+	<link rel="stylesheet" href="css/rightmenu.css">
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		html { width: 100%; height: 100%; display: block; }  
+		body {
+			display: block;
+			height: 100%;
+			width: 100%;
+			background: #27AE60;
+			overflow: hidden;
+			font-family: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体" ,sans-serif !important;
+		}
+		#wrap {
+			height: 100%;
+			width: 100%;
+			display: table;
+			text-align: center;
+		}
+		#wrap h1 {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 2em;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	
+	<div id="wrap">
+		<h1>Right Mouse Click Menu Demo</h1>
+	</div>
+	
+
+
+	<script src="js/rightmenu.js"></script>
+	<script>
+		rightMenu({class: 'right', items: 
+			{
+				'Baidu':'',
+				'Javascript': "javascript:alert('aaa')",
+				'line':'',
+				'Google#!disabled': '',
+				'Geeku#!mysite': 'http://www.geeku.net'
+			}
+		}, function() {
+			console.log('Successful');
+		});
+	</script>
+</body>
+</html>

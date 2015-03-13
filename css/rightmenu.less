@@ -1,0 +1,50 @@
+#rightMenu {
+	position: absolute;
+	display: none;
+	padding: 5px 0px;
+	background: #fff;
+	border: 1px solid rgb(186, 186, 186);
+	box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	z-index: 999;
+	font-family: 'Open Sans',Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体" ,sans-serif !important;
+
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			list-style: none;
+
+			a {
+				display: block;
+				padding: 5px 40px;
+				font-size: 15px;
+				color: #333;
+				text-decoration: none;
+				cursor: default;
+
+				&:hover {
+					background: rgb(66, 129, 244);
+					color: #fff;
+				}
+
+			}
+			&.line {
+				height: 1px;
+				background: #eee;
+				margin: 5px 0px;
+			}
+			&.disabled {
+				a {
+					color: #ccc;
+
+					&:hover {
+						background: transparent;
+						color: #ccc;
+					}
+				}
+			}
+		}
+	}
+}
