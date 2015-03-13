@@ -4,6 +4,10 @@
 
 rightMenu is a simple javascript plugin that you can easily create custom menu when you click the right mouse button in your broswer.
 
+## Demo
+
+http://lab.geeku.net/rightmenu/
+
 ## Instructions
 
 First,add js file and css file in your HTML file. like this:
