@@ -1,74 +1,77 @@
 (function(doc, win) {
 
-	function rightMenu(conf,callback) {
+	var rightMenu = function(conf,callback) {
+        rightMenu.prototype.init(conf,callback);
+    }
 
-		var cback = callback || function() {}; 
+    rightMenu.prototype = {
+    	
+    	rightMenu : null,
 
-		doc.oncontextmenu = function(e) {
+    	init : function(conf,callback) {
 
-			var e = e || win.event;
-			var body   = doc.getElementsByTagName('body')[0];
+    		var that  = this;
+    		var cback = callback || function() {},
 
-			if(e.ctrlKey) {
-				var remove = doc.getElementById('rightMenu') && body.removeChild(doc.getElementById('rightMenu'));
-				return true;
-			} else {
+			dbody           = doc.getElementsByTagName('body')[0];
+			dbody.innerHTML += this._createMenu(conf);
+			this.rightMenu  = doc.getElementById('rightMenu');
 
-				var remove = doc.getElementById('rightMenu') && body.removeChild(doc.getElementById('rightMenu'));
+    		doc.oncontextmenu = function(e) {
 
-				var right    = null;
-				var menu     = _createMenu(conf);
-				var position = _getXY(e);
+				var e = e || win.event;
 
-				body.innerHTML      += menu;
-				right               = doc.getElementById('rightMenu');
-				right.style.left    = position.x + 'px';
-				right.style.top     = position.y + 'px';
-				right.style.display = 'inline-block';
+				if(e.ctrlKey) {
+					that.rightMenu.style.display = 'none';
+					return true;
+				} else {
 
-				cback();
-				return false;
+					var position = that._getXY(e);
+
+					that.rightMenu.style.left    = position.x + 'px';
+					that.rightMenu.style.top     = position.y + 'px';
+					that.rightMenu.style.display = 'inline-block';
+					return false;
+				}
 			}
+			doc.onclick = function() {
+				that.rightMenu.style.display = 'none';
+			}
+
+			cback();
+    	},
+
+    	_createMenu : function(conf) {
+
+    		var className = conf.class || '';
+			var items     = conf.items;
+
+    		menu = '<div id="rightMenu" class="' + className + '"><ul>';
+			for(var item in items) {
+
+				var link = items[item] || 'javascript:void(0)';
+
+				if(item == 'line')
+					menu += '<li class="line"></li>';
+				else if(/#!/.test(item))
+					menu += '<li class="' + item.split('#!')[1] + '"><a href="' + link + '">' + item.split('#!')[0] + '</a></li>';
+				else
+					menu += '<li><a href="' + link + '">' + item + '</a></li>';
+			}
+			menu += '</ul></div>';
+
+			return menu;
+    	},
+
+    	_getXY : function(e) {
+			var toTop = doc.documentElement.scrollTop || doc.body.scrollTop;
+			var toLeft =  doc.documentElement.scrollLeft || doc.body.scrollLeft;
+
+			return {x: e.clientX + toLeft, y: e.clientY + toTop}; 
 		}
-		doc.onclick = function() {
-			var body  = doc.getElementsByTagName('body')[0];
-			var rightMenu = doc.getElementById('rightMenu');
-			if(rightMenu) 
-					body.removeChild(rightMenu);
-		}
-	}
+    	
+    }
 
-	//Get event's position
-	function _getXY(e) {
-		var toTop = doc.documentElement.scrollTop || doc.body.scrollTop;
-		var toLeft =  doc.documentElement.scrollLeft || doc.body.scrollLeft;
-
-		return {x: e.clientX + toLeft, y: e.clientY + toTop}; 
-	}
-
-	//Generate menu's HTML
-	function _createMenu(conf) {
-
-		var className = conf.class || '';
-		var items     = conf.items;
-		
-		var menu = '<div id="rightMenu" class="' + className + '"><ul>';
-		for(var item in items) {
-
-			var link = items[item] || 'javascript:void(0)';
-
-			if(item == 'line')
-				menu += '<li class="line"></li>';
-			else if(/#!/.test(item))
-				menu += '<li class="' + item.split('#!')[1] + '"><a href="' + link + '">' + item.split('#!')[0] + '</a></li>';
-			else
-				menu += '<li><a href="' + link + '">' + item + '</a></li>';
-		}
-		menu += '</ul></div>';
-
-		return menu;
-	}
-
-	win.rightMenu = rightMenu;
+	win.rightMenu = rightMenu;	
 
 })(document, window)
