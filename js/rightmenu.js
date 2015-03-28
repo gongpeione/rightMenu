@@ -7,15 +7,17 @@
     rightMenu.prototype = {
     	
     	rightMenu : null,
+    	windowWidth : 0,
 
     	init : function(conf,callback) {
 
     		var that  = this;
-    		var cback = callback || function() {},
+    		var cback = callback || function() {};
 
 			dbody           = doc.getElementsByTagName('body')[0];
 			dbody.innerHTML += this._createMenu(conf);
 			this.rightMenu  = doc.getElementById('rightMenu');
+			windowWidth     = document.body.clientWidth;
 
     		doc.oncontextmenu = function(e) {
 
@@ -27,10 +29,16 @@
 				} else {
 
 					var position = that._getXY(e);
+					
 
 					that.rightMenu.style.left    = position.x + 'px';
 					that.rightMenu.style.top     = position.y + 'px';
 					that.rightMenu.style.display = 'inline-block';
+					that.rightMenu.style.visibility = 'hidden';
+					var width = that.rightMenu.style.width || that.rightMenu.clientWidth || that.rightMenu.offsetWidth || that.rightMenu.scrollWidth;
+					if(position.x + width >= windowWidth)
+						that.rightMenu.style.left = position.x - width + 'px';
+					that.rightMenu.style.visibility = 'visible';
 					return false;
 				}
 			}
