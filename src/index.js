@@ -18,6 +18,8 @@ export default class {
 			'text',
 		];
 
+		console.log(typeof parent === 'string', this.parent, this.option);
+
 		if (!this.options.items) {
 			return;
 		}

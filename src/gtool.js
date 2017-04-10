@@ -115,7 +115,7 @@ export const g = {
 	 * @returns {Element} element
 	 */
 	$: (selector, context = document) => {
-		if (context instanceof NodeList) {
+		if (context instanceof NodeList || context instanceof HTMLCollection) {
 			return Array.from(context, node => {
 				return node.querySelector(selector);
 			});
@@ -131,7 +131,7 @@ export const g = {
 	 * @returns {Array} elements list
 	 */
 	$$: (selector, context = document) => {
-		if (context instanceof NodeList) {
+		if (context instanceof NodeList || context instanceof HTMLCollection) {
 			return Array.from(context, node => {
 				return node.querySelectorAll(selector);
 			});
