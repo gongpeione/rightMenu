@@ -1,5 +1,5 @@
 .g-contextMenu {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.98);
   display: none;
   border-radius: 3px;
   margin: 0;
@@ -7,27 +7,32 @@
   list-style: none;
   min-width: 200px;
   position: fixed;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  font-size: 16px;
-  text-align: left; }
+  border: 1px solid #fff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  text-align: left;
+  box-sizing: border-box; }
   .g-contextMenu.show {
     display: inline-block; }
   .g-contextMenu.hide {
     display: none; }
   .g-contextMenu li {
     padding: 5px 10px;
-    color: #333; }
+    color: #172133;
+    transition: all .1s ease-in-out; }
     .g-contextMenu li:hover {
-      background: #eee; }
+      background: #2874C4;
+      color: #fff; }
+      .g-contextMenu li:hover a {
+        color: #fff; }
   .g-contextMenu li.separator {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0;
     margin: 5px 0; }
     .g-contextMenu li.separator:hover {
       background: transparent; }
   .g-contextMenu li.disabled {
-    color: #999;
+    color: rgba(0, 0, 0, 0.6);
     cursor: not-allowed; }
     .g-contextMenu li.disabled:hover {
       background: transparent; }

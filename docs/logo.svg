@@ -4,22 +4,18 @@
     <title>Group 3</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <linearGradient x1="50%" y1="92.6584077%" x2="50%" y2="0%" id="linearGradient-1">
-            <stop stop-color="#774096" offset="0%"></stop>
-            <stop stop-color="#115181" offset="100%"></stop>
-        </linearGradient>
-        <rect id="path-2" x="37" y="22" width="6" height="11" rx="3"></rect>
-        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="6" height="11" fill="white">
-            <use xlink:href="#path-2"></use>
+        <rect id="path-1" x="37" y="22" width="6" height="11" rx="3"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="6" height="11" fill="white">
+            <use xlink:href="#path-1"></use>
         </mask>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="rightMenu" transform="translate(-20.000000, -16.000000)">
             <g id="Group-3" transform="translate(20.000000, 16.000000)">
-                <circle id="Oval" fill="url(#linearGradient-1)" cx="40" cy="40" r="40"></circle>
+                <circle id="Oval" fill="#1E4288" cx="40" cy="40" r="40"></circle>
                 <path d="M64.9600182,58.8072089 C64.2132788,75.6395569 53.0999631,89 39.5,89 C25.9008285,89 14.7880149,75.6411121 14.0401123,58.8101481 C14.0135844,58.5447914 14,58.2755866 14,58.0031624 L14,21.9968376 C14,17.5803062 17.586221,14 21.9967834,14 L57.0032166,14 C61.4197181,14 65,17.5741706 65,21.9968376 L65,58.0031624 C65,58.2745475 64.9864591,58.5427752 64.9600182,58.8072089 Z M38.0289187,8 L41.1584856,8 L41.1584856,11.4220529 C41.1584856,11.4220529 41.188696,12.0260906 41.3439493,12.3172104 C41.4992026,12.6083302 42,13 42,13 L37,13 C37,13 37.6001675,12.5688192 37.7677343,12.3172104 C37.935301,12.0656017 38.0289187,11.4550342 38.0289187,11.4550342 L38.0289187,8 Z" id="Combined-Shape" stroke="#FFFFFF" stroke-width="2" fill="#7ABBFF"></path>
                 <path d="M39.5136222,14.974558 C39.5136222,14.974558 43.0946545,14.9255703 47.5202974,14.8650286 L56.5939994,14.7409026 C61.0159641,14.6804112 64.5232048,18.2119077 64.4277276,22.6247123 L64.1879542,33.7066617 C64.0924382,38.121261 64.0150072,41.7000008 64.0150072,41.7000008 L64.0150072,41.7000008 C62.2541456,41.7000008 60.493284,41.7000008 58.7324225,41.7000008 C52.3261557,41.7000008 45.9198889,41.7000008 39.5136222,41.7000008 C33.8579723,41.7000008 39.5136222,41.7000008 39.5136222,41.7000008 C39.5136222,41.7000008 39.5136222,38.1113019 39.5136222,33.6987056 L39.5136222,14.974558 C39.5136222,10.9818043 39.5136222,14.974558 39.5136222,14.974558 Z" id="Rectangle-21" fill="#2874C4"></path>
-                <use id="Rectangle-2" stroke="#275B81" mask="url(#mask-3)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-2"></use>
+                <use id="Rectangle-2" stroke="#275B81" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
             </g>
         </g>
     </g>
