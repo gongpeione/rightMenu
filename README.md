@@ -1,3 +1,5 @@
+<img src="https://gongpeione.github.io/rightMenu/logo.svg" style="width: 150px;height: auto;margin: 0 auto;display: block">
+
 # RightMenu.js
 
 ## Introduction
